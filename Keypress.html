@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>按键测试工具</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<style>
+		.display_shape{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+			position: relative;
+			left: 350px;
+		}
+	</style>
+</head>
+<body unselectable="on" onselectstart="return false;" style="-moz-user-select:none;">
+	<div class="center" id="center-all">
+		<h1 id="center-content"></h1>
+		<!-- <button  class="btn" data-clipboard-action="copy" data-clipboard-target="#center-content" id="copy-button" style="display:none;">
+			Press the button to copy the above 8-digit CODE and paste it in the survey.
+		</button> -->
+		<!-- <button id="begin" onclick="event_begin()" style="display: none;">Start</button> -->
+		<div  id="mturk" style="width:100%" >
+			<input type="text" placeholder="Input your MTurk ID here" id="mturkid" style="width: 300px;"><button onclick="add_mturk()"  id="add_mturk">Submit</button>
+		</div>
+	</div>
+	<div class="left top" id="left-top">
+	</div>
+	<div class="right top" id="right-top" style="display:none;">
+		<input type="text" placeholder="请输入MturkID" id="username" onkeydown=EnterKeyDown() disabled=true><button onclick="download()" disabled=true id="download">提交</button>
+	</div>
+	<div class="left bottom" id="left-bottom">
+	</div>
+	<div class="right bottom" id="right-buttom">
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../js/file.js"></script>
+	<script src="../js/clipboard.min.js"></script>
+	<script>
+	var clipboard = new ClipboardJS('.btn');
+	clipboard.on('success', function(e) {
+    alert('Copied successfully!')
+
+    e.clearSelection();
+	});</script>
+	<script src="js/config.js"></script>
+	<script src="../js/main.js"></script>
+
+</body>
+</html>
